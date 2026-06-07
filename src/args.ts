@@ -24,6 +24,11 @@ const args = Args.create(
       setting: "freecandy_familiar",
       default: myFamiliar(),
     }),
+    pantsgiving: Args.boolean({
+      help: "Whether to fill pantsgiving fullness",
+      setting: "freecandy_pantsgiving",
+      default: false,
+    }),
   },
   { positionalArgs: ["blocks"] }
 );

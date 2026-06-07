@@ -197,11 +197,17 @@ const GLOBAL_TASKS: CandyTask[] = [
   {
     name: "Fill Pantsgiving Fullness",
     ready: () =>
-      !$classes`Vampyre, Grey Goo`.includes(myClass()) && myFullness() + 1 === fullnessLimit(),
+      args.pantsgiving &&
+      !$classes`Vampyre, Grey Goo`.includes(myClass()) &&
+      myFullness() + 1 === fullnessLimit(),
     completed: () => myFullness() >= fullnessLimit(),
     do: (): void => {
       const { food } = getBestPantsgivingFood();
-      if (!get("_fudgeSporkUsed")) {
+      const VOA = get("valueOfAdventure");
+      const fudgeSporkValue =
+        !get("_fudgeSporkUsed") ? 3 * VOA - mallPrice($item`fudge spork`) : 0;
+
+      if (fudgeSporkValue > 0) {
         retrieveItem($item`fudge spork`);
         eat($item`fudge spork`);
       }
