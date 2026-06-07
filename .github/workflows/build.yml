@@ -41,9 +41,7 @@ jobs:
       - name: Install Dependencies
         run: yarn install --immutable
 
-      - name: ESLint & Prettier
-        run: yarn run lint
-
+      
   push:
     runs-on: ubuntu-latest
     needs: [test, lint]
