@@ -8,7 +8,7 @@ import {
   inebrietyLimit,
   Item,
   Location,
-  mallPrices,
+  mallPrice,
   myClass,
   myFullness,
   myHp,
