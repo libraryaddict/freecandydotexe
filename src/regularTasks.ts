@@ -204,9 +204,7 @@ const GLOBAL_TASKS: CandyTask[] = [
     do: (): void => {
       const { food } = getBestPantsgivingFood();
       const VOA = get("valueOfAdventure");
-      const fudgeSporkValue = !get("_fudgeSporkUsed")
-        ? 3 * VOA - mallPrice($item`fudge spork`)
-        : 0;
+      const fudgeSporkValue = !get("_fudgeSporkUsed") ? 3 * VOA - mallPrice($item`fudge spork`) : 0;
 
       if (fudgeSporkValue > 0) {
         retrieveItem($item`fudge spork`);
